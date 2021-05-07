@@ -38,25 +38,14 @@ body {
 }
 
 
-.jelly-wrapper{
+.robo-wrapper{
 	width: 265px;
 	position: absolute;
 	transform: translate3D(-50%, -75%, 0);
-	animation: jelly-movement 10s infinite linear;
+	animation: robo-movement 10s infinite linear;
 }
 
-.jelly-hair{
-    height: 75px;
-    width: 100px;
-    background: linear-gradient(to bottom, rgba(239,137,26,1) 0%,rgba(239,137,26,1) 20%, rgba(235,242,138,1) 100% ); /* W3C */;
-    position: absolute;
-    left: 29%;
-    transform: rotate3d(0, 1, 0, 180deg) translate3d(28%, -15px, 0) rotate3d(0, 0, 1, 75deg);
-    border-radius: 25px;
-    animation: hair-movement 10s infinite linear;
-}
-
-.jelly-body {
+.robo-body {
       box-shadow: 0 0 0 1em #142eed,
       0 1em 0 1em #142eed,
       -2.5em 1.5em 0 .5em #142eed,
@@ -95,71 +84,15 @@ body {
       position:center;
     }
 
-.jelly-inner {
+.robo-inner {
 	position: absolute;
     left: 50%;
     top: 35%;
     animation: facing-movement 10s infinite linear;
 }
 
-%jelly-eye{
-	content: '';
-    position: absolute;
-    height: 15px;
-    bottom: -25px;
-    width: 15px;
-    border-radius: 50%;
-    background-color: #FFF;
-    animation: eyes-blink 3.5s infinite linear;
-}
 
-.jelly-eyes {
-	position: absolute;
-    top: -40px;
-    animation: eyes-movement 10s infinite linear;
-
-	&:before{
-		@extend %jelly-eye;
-		left: 60px;
-	}
-
-    &:after{
-    	@extend %jelly-eye;
-    	left: -70px;
-    }
-
-
-}
-
-
-
-
-.jelly-mouth {
-	position: absolute;
-    height: 80px;
-    width: 200px;
-    left: 50%;
-    top: 35%;
-    transform: translate3D(-50%, 0, 0);
-    background-color: #F4CFD1;
-    border-radius: 30px;
-    box-shadow: 0px 0px 7px #808080;
-
-    &:after{
-		content: '';
-	    position: absolute;
-	    height: 3%;
-	    width: 60%;
-	    background-color: #FF9393;
-	    left: 50%;
-	    top: 50%;
-	    transform: translate3D(-50%, 0, 0);
-	    box-shadow: 0 0 3px #FF6B6B;
-	    animation: mouth-movement 10s infinite linear;
-    }
-}
-
-@keyframes jelly-movement{
+@keyframes robo-movement{
 	0%   {
 		top:55%;
 		left: 50%;
@@ -230,12 +163,6 @@ body {
 	}
 }
 
-@keyframes tentacle-animation{
-	0%   {bottom:-8% ;}
-	50%  {bottom:-20% ;}
-	100% {bottom:-8% ;}
-}
-
 @keyframes facing-movement{
 	0%   {left: 60%;}
 	20%  {left: 60%;}
@@ -247,27 +174,6 @@ body {
 	100% {left: 60%;}
 }
 
-@keyframes mouth-movement{
-	0%   {left: 52%;}
-	20%  {left: 52%;}
-	25%	 {left: 50%;}
-	30%	 {left: 46%;}
-	70%  {left: 46%;}
-	75%	 {left: 50%;}
-	80%	 {left: 52%;}
-	100% {left: 52%;}
-}
-
-@keyframes eyes-movement{
-	0%   {left: 5px;}
-	20%	 {left: 5px;}
-	25%	 {left: 0px;}
-	30%  {left: -5px;}
-	70%	 {left: -5px;}
-	75%	 {left: 0px;}
-	80%	 {left: 5px;}
-	100% {left: 5px;}
-}
 
 @keyframes head-movement{
 	0%   {
@@ -304,107 +210,6 @@ body {
 	}
 }
 
-@keyframes hair-movement{
-	0%   {transform: rotate3d(0, 1, 0, 180deg) translate3d(28%, -2px, 0) rotate3d(0, 0, 1, 75deg);}
-	20%  {transform: rotate3d(0, 1, 0, 180deg) translate3d(28%, -2px, 0) rotate3d(0, 0, 1, 75deg);}
-	25%	 {transform: rotate3d(0, 1, 0, 90deg) translate3d(28%, -2px, 0) rotate3d(0, 0, 1, 75deg);}
-	30%	 {transform: rotate3d(0, 1, 0, 0deg) translate3d(28%, -2px, 0) rotate3d(0, 0, 1, 75deg);}
-	70%  {transform: rotate3d(0, 1, 0, 0deg) translate3d(28%, -2px, 0) rotate3d(0, 0, 1, 75deg);}
-	75%	 {transform: rotate3d(0, 1, 0, 90deg) translate3d(28%, -2px, 0) rotate3d(0, 0, 1, 75deg);}
-	80%	 {transform: rotate3d(0, 1, 0, 180deg) translate3d(28%, -2px, 0) rotate3d(0, 0, 1, 75deg);}
-	100% {transform: rotate3d(0, 1, 0, 180deg) translate3d(28%, -2px, 0) rotate3d(0, 0, 1, 75deg);}
-}
-
-@keyframes shadow-movement{
-	0%   {
-		width:250px;
-		left: 50%;
-	}
-	5%   {
-		width:210px;
-	}
-	10%  {
-		width:250px;
-	}
-	15%  {
-		width:210px;
-	}
-	20%  {
-		width:250px;
-	}
-	25%  {
-		width:210px;
-		left: calc(100% - 135px);
-	}
-	30%  {
-		width:250px;
-	}
-	35%  {
-		width:210px;
-	}
-	40%  {
-		width:250px;
-	}
-	45%  {
-		width:210px;
-	}
-	50%  {
-		width:250px;
-		left: 50%;
-	}
-	55%  {
-		width:210px;
-	}
-	60%  {
-		width:250px;
-	}
-	65%  {
-		width:210px;
-	}
-	70%  {
-		width:250px;
-	}
-	75%  {
-		width:210px;
-		left: 135px;
-	}
-	80%  {
-		width:250px;
-	}
-	85%  {
-		width:210px;
-	}
-	90%  {
-		width:250px;
-	}
-	95%  {
-		width:210px;
-	}
-	100% {
-		width:250px;
-		left: 50%;
-	}
-}
-
-@keyframes eyes-blink{
-	0%   {height:15px;}
-	3%   {height:1px;}
-	5%   {height:15px;}
-	100% {height:15px;}
-}
-
-@keyframes bubble-movement{
-	0%   {
-		transform: translate3d(-50%, 0, 0);
-		height: 1px;
-		width: 1px;
-		}
-	100% {
-		transform: translate3d(-50%, -500px, 0);
-		height: 75px;
-		width: 75px;
-	}
-}
 
 @-webkit-keyframes STAR-MOVE {
 	from {
